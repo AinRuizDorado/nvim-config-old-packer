@@ -1,7 +1,7 @@
 local nvim_lsp = require('lspconfig')
 
 
--- nvim_lsp.tsserver.setup {}
+nvim_lsp.tsserver.setup {}
 
 
 -- local project_library_path = "/path/to/project/lib"
