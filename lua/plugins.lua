@@ -47,22 +47,16 @@ require('packer').startup(function()
         "jremmen/vim-ripgrep",
     })
 -- Completition
-    -- use({
-    --     "hrsh7th/nvim-cmp",
-    --     requires = {
-    --         "hrsh7th/cmp-buffer",
-    --         "hrsh7th/cmp-path",
-    --         "hrsh7th/cmp-nvim-lua",
-    --         "hrsh7th/cmp-nvim-lsp",
-    --         "hrsh7th/cmp-cmdline",
-    --         "hrsh7th/cmp-git",
-    --         "rcarriga/cmp-dap",
-    --         "saadparwaiz1/cmp_luasnip",
-    --         "onsails/lspkind-nvim",
-    --         "L3MON4D3/LuaSnip",
-    --         "windwp/nvim-autopairs",
-    --     },
-    -- })
+    use({
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-nvim-lsp",
+            "saadparwaiz1/cmp_luasnip",
+        },
+    })
 
     -- LSP
     use({

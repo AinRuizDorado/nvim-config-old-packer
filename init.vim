@@ -35,7 +35,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 " COC
-Plug 'neoclide/coc.nvim'
+" Plug 'neoclide/coc.nvim'
 
 
 
@@ -76,12 +76,12 @@ nmap <Leader>q :q<Cr>
 
 " Coc Action config
 " Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-nmap <leader>i  <Plug>(coc-fix-current)
+" function! s:cocActionsOpenFromSelected(type) abort
+"   execute 'CocCommand actions.open ' . a:type
+" endfunction
+" xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+" nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+" nmap <leader>i  <Plug>(coc-fix-current)
 
 let g:fzf_layout = { 'down': '40%' }
 
