@@ -9,7 +9,7 @@ set encoding=utf-8
 set showmatch
 set relativenumber
 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 
 
 
@@ -17,6 +17,7 @@ call plug#begin()
 " Themes
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Tree
 Plug 'https://github.com/scrooloose/nerdtree'
@@ -85,5 +86,5 @@ nmap <Leader>q :q<Cr>
 
 let g:fzf_layout = { 'down': '40%' }
 
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
+colorscheme tokyonight 
+" let g:gruvbox_contrast_dark = "hard"
