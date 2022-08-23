@@ -3,9 +3,6 @@ if not status_ok then
 	return
 end
 
-print('TRESITTER WORKING CORRECTLY')
-
-
 configs.setup({
 	ensure_installed = "all", -- one of "all" or a list of languages
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing

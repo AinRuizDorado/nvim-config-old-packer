@@ -3,11 +3,12 @@ local nvim_lsp = require('lspconfig')
 nvim_lsp.tsserver.setup {}
 nvim_lsp.sumneko_lua.setup{}
 -- local project_library_path = "/path/to/project/lib"
--- local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
+-- local cmd = {}
 
 -- require'lspconfig'.angularls.setup{
 --   cmd = cmd,
---   on_new_config = function(new_config,new_root_dir)
---     new_config.cmd = cmd
---   end,
 -- }
+--
+----
+--require'lspconfig'.angularls.setup{}
+-- print("angular loaded")

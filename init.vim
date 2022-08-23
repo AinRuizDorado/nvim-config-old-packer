@@ -30,6 +30,13 @@ Plug 'djoshea/vim-autoread'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
+" Angular snipets
+Plug 'mhartington/vim-angular2-snippets'
 
 " Prettier
 " post install (yarn install | npm install) then load plugin only for editing supported files
@@ -43,8 +50,18 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 " IDE
 Plug 'easymotion/vim-easymotion'
 Plug 'jremmen/vim-ripgrep'
+
 " Emmet
 Plug 'mattn/emmet-vim'
+
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" lualine el status line de abajo mejorado
+Plug 'nvim-lualine/lualine.nvim'
+
+
 
 call plug#end()
 
@@ -57,10 +74,33 @@ nmap <Leader>t :NERDTreeFocus<CR>
 nmap <Leader>t :NERDTreeToggle<CR>
 
 " Remaps FZF
-nmap <Leader>f :Files<Cr>
+" nmap <Leader>f :Files<Cr>
 nmap <Leader>F :Ag<Cr>
 
+" CMP VNIPER
+imap <expr><C-l> vsnip#available(1)    ? '<Plug>(vsnip-expand)'         : '<C-l>'
+smap <expr><C-l> vsnip#available(1)    ? '<Plug>(vsnip-expand)'         : '<C-l>'
+imap <expr><Tab> vsnip#available(1)    ? '<Plug>(vsnip-expand-or-jump)' : '<Tab>'
+smap <expr><Tab> vsnip#jumpable(1)     ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr><S-Tab> vsnip#available(-1) ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr><S-Tab> vsnip#available(-1) ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
+lua<<EOF
+local cmp = require('cmp')
+cmp.setup {
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm({ select = true })
+  },
+  sources = {
+    { name = 'vsnip' }
+  }
+}
+EOF
+
+" lualine setup
+lua << END
+require('lualine').setup()
+END
 
 " Prettier
 nmap <Leader>pr <Plug>(Prettier)
@@ -75,6 +115,7 @@ nmap <Leader>q :q<Cr>
 
 
 
+
 " Coc Action config
 " Remap for do codeAction of selected region
 " function! s:cocActionsOpenFromSelected(type) abort
@@ -84,7 +125,7 @@ nmap <Leader>q :q<Cr>
 " nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 " nmap <leader>i  <Plug>(coc-fix-current)
 
-let g:fzf_layout = { 'down': '40%' }
+" let g:fzf_layout = { 'down': '40%' }
 
 colorscheme tokyonight 
 " let g:gruvbox_contrast_dark = "hard"
