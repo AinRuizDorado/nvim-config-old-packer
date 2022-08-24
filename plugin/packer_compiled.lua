@@ -89,10 +89,15 @@ _G.packer_plugins = {
     path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  cmp_luasnip = {
+  ["cmp-vsnip"] = {
     loaded = true,
-    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["lightline-ale"] = {
     loaded = true,
@@ -104,6 +109,16 @@ _G.packer_plugins = {
     path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/lightline.vim",
     url = "https://github.com/itchyny/lightline.vim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -113,11 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -173,6 +183,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/vim-terminal",
     url = "https://github.com/tc50cal/vim-terminal"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/Users/ainruizdorado/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 

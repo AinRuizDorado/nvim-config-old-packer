@@ -36,7 +36,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Angular snipets
-Plug 'mhartington/vim-angular2-snippets'
+" Plug 'mhartington/vim-angular2-snippets'
 
 " Prettier
 " post install (yarn install | npm install) then load plugin only for editing supported files
@@ -45,11 +45,15 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 " COC
 " Plug 'neoclide/coc.nvim'
 
+Plug 'rafamadriz/friendly-snippets'
 
 
 " IDE
 Plug 'easymotion/vim-easymotion'
 Plug 'jremmen/vim-ripgrep'
+
+" Terminal
+Plug 'numToStr/FTerm.nvim'
 
 " Emmet
 Plug 'mattn/emmet-vim'
@@ -70,8 +74,9 @@ lua require('lsp')
 let mapleader=" "
 
 " Remaps nerd tree
-nmap <Leader>t :NERDTreeFocus<CR>
-nmap <Leader>t :NERDTreeToggle<CR>
+nmap <Leader>tr :NERDTreeFocus<CR>
+nmap <Leader>tr :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
 
 " Remaps FZF
 " nmap <Leader>f :Files<Cr>
@@ -85,17 +90,6 @@ smap <expr><Tab> vsnip#jumpable(1)     ? '<Plug>(vsnip-jump-next)'      : '<Tab>
 imap <expr><S-Tab> vsnip#available(-1) ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 smap <expr><S-Tab> vsnip#available(-1) ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
-lua<<EOF
-local cmp = require('cmp')
-cmp.setup {
-  mapping = {
-    ['<CR>'] = cmp.mapping.confirm({ select = true })
-  },
-  sources = {
-    { name = 'vsnip' }
-  }
-}
-EOF
 
 " lualine setup
 lua << END
@@ -113,7 +107,8 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>w :w<Cr>
 nmap <Leader>q :q<Cr>
 
-
+tnoremap <C-r> <Cmd>lua require'FTerm'.toggle()<CR>
+nnoremap <C-r> <Cmd>lua require'FTerm'.toggle()<CR>
 
 
 " Coc Action config

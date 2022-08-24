@@ -5,7 +5,7 @@ telescope.setup {
     defaults = {
         color_devicons = true,
         prompt_prefix = "$ ",
-        file_ignore_patterns = { "^.git/" },
+        file_ignore_patterns = { "^.git/", "^.node_modules/" },
         mappings = {
             i = {
                 ['<esc>'] = actions.close
@@ -16,7 +16,7 @@ telescope.setup {
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-telescope.load_extension('fzf')
+-- telescope.load_extension('fzf')
 
 local M = {}
 

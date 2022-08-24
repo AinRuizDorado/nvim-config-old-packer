@@ -49,24 +49,25 @@ require('packer').startup(function()
 -- Completition
     use({
         "hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-nvim-lua",
-	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/vim-vsnip",
 	"hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip-integ",
-	"saadparwaiz1/cmp_luasnip",
-	"rafamadriz/friendly-snippets",
+	-- "rafamadriz/friendly-snippets",
 
     })
-
     -- LSP
     use({
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-	"williamboman/nvim-lsp-installer",
-        -- "hrsh7th/cmp-nvim-lsp-signature-help",
         "jose-elias-alvarez/null-ls.nvim",
+	-- outdated
+	-- "williamboman/nvim-lsp-installer",
+        -- "hrsh7th/cmp-nvim-lsp-signature-help",
     })
 end)
 

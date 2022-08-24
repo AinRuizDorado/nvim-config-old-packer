@@ -1,4 +1,29 @@
 local cmp = require'cmp'
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+local nvim_lsp = require('lspconfig')
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+nvim_lsp.tsserver.setup {
+
+   on_attach = on_attach,
+    capabilities = capabilities
+}
+nvim_lsp.sumneko_lua.setup{}
+
+local project_library_path = "/Users/ainruizdorado/.nvm/versions/node/v16.17.0/lib/node_modules"
+
+local cmd = {"node", "/Users/ainruizdorado/.nvm/versions/node/v16.17.0/lib/node_modules/@angular/language-server","--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
+
+ nvim_lsp.angularls.setup {
+   on_attach = on_attach,
+   capabilities = capabilities,
+   cmd = cmd,
+   on_new_config = function(new_config,new_root_dir)
+     new_config.cmd = cmd
+   end,
+}
 
   cmp.setup({
     snippet = {
@@ -22,14 +47,14 @@ local cmp = require'cmp'
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      -- { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
-    })
+    { name = "nvim_lua" },
+
+    { name = "nvim_lsp" },
+    { name = "vsnip" },
+    { name = "path" },
+    { name = "buffer" },
+    }),
+
   })
 
   -- Set configuration for specific filetype.
@@ -59,9 +84,6 @@ local cmp = require'cmp'
     })
   })
 
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['tsserver'].setup {
-    capabilities = capabilities
-  }
+  -- require('lspconfig')['tsserver'].setup {
+  --   capabilities = capabilities
+  -- }
