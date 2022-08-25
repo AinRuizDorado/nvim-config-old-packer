@@ -81,9 +81,7 @@ require('packer').startup(function()
 	"williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
         "jose-elias-alvarez/null-ls.nvim",
-	-- outdated
-	-- "williamboman/nvim-lsp-installer",
-        -- "hrsh7th/cmp-nvim-lsp-signature-help",
+	"MunifTanjim/eslint.nvim",
     })
 	-- Treesitter context
 	use 'nvim-treesitter/nvim-treesitter-context'

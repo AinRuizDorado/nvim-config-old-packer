@@ -11,6 +11,10 @@ require("lsp.keymaps")
 require("lsp.theme")
 -- Configuracion de servidores de lenguaje
 require('lsp.lsp')
+
+-- Configuracion de Null-ls y eslint
+require("lsp.null-ls-eslint")
+
 -- Mason se encarga de mostrarme que servidores de lenguaje estan corriendo
 require("mason").setup()
 require("mason-lspconfig").setup()
