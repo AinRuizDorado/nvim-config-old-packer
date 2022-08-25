@@ -85,6 +85,8 @@ require('packer').startup(function()
 	-- "williamboman/nvim-lsp-installer",
         -- "hrsh7th/cmp-nvim-lsp-signature-help",
     })
+	-- Treesitter context
+	use 'nvim-treesitter/nvim-treesitter-context'
 end)
 
 
