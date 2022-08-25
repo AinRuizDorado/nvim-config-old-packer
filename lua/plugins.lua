@@ -5,6 +5,7 @@ local use = require('packer').use
 
 require('packer').startup(function()
 
+    -- el propio Packer, si se borra es F total
     use 'wbthomason/packer.nvim'
 
     -- status bar 
@@ -16,6 +17,8 @@ require('packer').startup(function()
     -- Themes 
     use({
         "ryanoasis/vim-devicons",
+	"folke/tokyonight.nvim",
+	"nvim-lualine/lualine.nvim"
     })
 
 
@@ -33,7 +36,7 @@ require('packer').startup(function()
 
     -- Terminal 
     use({
-        "tc50cal/vim-terminal",
+        "numToStr/FTerm.nvim",
     })
 
     -- Auto read, en teoria actualiza el archivo sin tener que abrir y cerrar VIM 
@@ -46,6 +49,18 @@ require('packer').startup(function()
         "easymotion/vim-easymotion",
         "jremmen/vim-ripgrep",
     })
+
+    -- FZF
+	use({
+		"junegunn/fzf",
+		"junegunn/fzf.vim",
+	})
+
+    -- NerdTree 
+	use({
+		"scrooloose/nerdtree",
+	})
+
 -- Completition
     use({
         "hrsh7th/nvim-cmp",
@@ -56,7 +71,8 @@ require('packer').startup(function()
 	"hrsh7th/vim-vsnip",
 	"hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip-integ",
-	-- "rafamadriz/friendly-snippets",
+	"rafamadriz/friendly-snippets",
+	"mattn/emmet-vim",
 
     })
     -- LSP
