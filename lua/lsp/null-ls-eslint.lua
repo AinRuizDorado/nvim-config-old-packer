@@ -8,6 +8,7 @@ null_ls.setup({
     null_ls.builtins.formatting.prettierd;
     null_ls.builtins.diagnostics.eslint;
     null_ls.builtins.completion.vsnip;
+    null_ls.builtins.code_actions.gitsigns,
   },
   -- AUTO FORMAT AL GUARDAR, LO SACO PORQ EN TS ES MUY MOLESTO CON EL TSSERVER
   -- on_attach = function(client, bufnr)
