@@ -11,9 +11,12 @@ require("lsp.keymaps")
 require("lsp.theme")
 -- Configuracion de servidores de lenguaje
 require('lsp.lsp')
-
 -- Configuracion de Null-ls y eslint
 require("lsp.null-ls-eslint")
+-- Configuracion de GitSigns para que se muestre el registro git a la derecha de la linea
+require("lsp.gitSigns")
+-- Configuracion de BlankLine para saber que bloque de codigo estas
+require("lsp.blankLine")
 
 -- Mason se encarga de mostrarme que servidores de lenguaje estan corriendo
 require("mason").setup()
