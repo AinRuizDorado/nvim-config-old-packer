@@ -18,7 +18,8 @@ require('packer').startup(function()
   use({
     "ryanoasis/vim-devicons",
     "folke/tokyonight.nvim",
-    "nvim-lualine/lualine.nvim"
+    "nvim-lualine/lualine.nvim",
+    'norcalli/nvim-colorizer.lua'
   })
 
 
@@ -32,11 +33,6 @@ require('packer').startup(function()
   -- css
   use({
     "ap/vim-css-color",
-  })
-
-  -- Terminal
-  use({
-    "numToStr/FTerm.nvim",
   })
 
   -- Auto read, en teoria actualiza el archivo sin tener que abrir y cerrar VIM
@@ -73,8 +69,15 @@ require('packer').startup(function()
     "hrsh7th/vim-vsnip-integ",
     "rafamadriz/friendly-snippets",
     "mattn/emmet-vim",
-
+    "onsails/lspkind.nvim"
   })
+
+  -- LSP SAGA
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+  })
+
   -- LSP
   use({
     "williamboman/mason.nvim",
@@ -92,5 +95,6 @@ require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
   }
+  use 'kyazdani42/nvim-web-devicons'
 
 end)

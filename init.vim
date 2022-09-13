@@ -54,6 +54,3 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>w :w<Cr>
 nmap <Leader>q :q<Cr>
 
-tnoremap <C-r> <Cmd>lua require'FTerm'.toggle()<CR>
-nnoremap <C-r> <Cmd>lua require'FTerm'.toggle()<CR>
-
