@@ -1,7 +1,7 @@
 -- Maneja el lsp con cmp para mostrar el auto completado
 require('lsp.completion')
 -- configuracion del treesitter para mejores colores en texto
-require('lsp.treesitter')
+require("lsp.treesitter")
 require("lsp.nvim-context")
 -- Telescope para buscar archivos y codigo en archivos
 require("lsp.telescope")
@@ -23,6 +23,8 @@ require("lsp.null-ls-eslint")
 require("lsp.gitSigns")
 -- Configuracion de BlankLine para saber que bloque de codigo estas
 require("lsp.blankLine")
+-- Configuracion de Prettier con null-ls-eslint
+-- require("lsp.prettier")
 
 -- Configuracion de colorizer para ver que color es en el css
 require("lsp.colorizer")

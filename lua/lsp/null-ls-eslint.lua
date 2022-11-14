@@ -4,11 +4,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.eslint_d;
-    null_ls.builtins.formatting.prettierd;
-    null_ls.builtins.diagnostics.eslint;
-    null_ls.builtins.completion.vsnip;
-    null_ls.builtins.code_actions.gitsigns,
+    null_ls.builtins.formatting.prettier;
   },
   -- AUTO FORMAT AL GUARDAR, LO SACO PORQ EN TS ES MUY MOLESTO CON EL TSSERVER
   -- on_attach = function(client, bufnr)
@@ -26,22 +22,3 @@ null_ls.setup({
   -- end,
 })
 
-eslint.setup({
-  bin = 'eslint', -- or `eslint_d`
-  code_actions = {
-    enable = true,
-    apply_on_save = {
-      enable = true,
-      types = { "problem" }, -- "directive", "problem", "suggestion", "layout"
-    },
-    disable_rule_comment = {
-      enable = true,
-      location = "separate_line", -- or `same_line`
-    },
-  },
-  diagnostics = {
-    enable = true,
-    report_unused_disable_directives = false,
-    run_on = "type", -- or `save`
-  },
-})

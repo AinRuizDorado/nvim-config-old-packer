@@ -69,7 +69,7 @@ require('packer').startup(function()
     "hrsh7th/vim-vsnip-integ",
     "rafamadriz/friendly-snippets",
     "mattn/emmet-vim",
-    "onsails/lspkind.nvim"
+    "onsails/lspkind.nvim",
   })
 
   -- LSP SAGA
@@ -86,6 +86,8 @@ require('packer').startup(function()
     "jose-elias-alvarez/null-ls.nvim",
     "MunifTanjim/eslint.nvim",
   })
+
+
   -- Treesitter context
   use 'nvim-treesitter/nvim-treesitter-context'
 
