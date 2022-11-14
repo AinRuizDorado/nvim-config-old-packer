@@ -25,6 +25,10 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['html'] }
 
 
 call plug#end()
@@ -32,6 +36,7 @@ call plug#end()
 lua require('plugins')
 lua require('lsp')
 let mapleader=" "
+nmap <Leader>py <Plug>(Prettier)
 
 " Remaps nerd tree
 nmap <Leader>tr :NERDTreeFocus<CR>
