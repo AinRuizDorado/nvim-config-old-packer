@@ -95,7 +95,7 @@ require('packer').startup(function()
     }
 
   -- Treesitter context
-  use 'nvim-treesitter/nvim-treesitter-context'
+  -- use 'nvim-treesitter/nvim-treesitter-context'
 
   use "lukas-reineke/indent-blankline.nvim"
 

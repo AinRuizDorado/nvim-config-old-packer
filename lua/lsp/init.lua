@@ -2,7 +2,7 @@
 require('lsp.completion')
 -- configuracion del treesitter para mejores colores en texto
 require("lsp.treesitter")
-require("lsp.nvim-context")
+-- require("lsp.nvim-context")
 -- Telescope para buscar archivos y codigo en archivos
 require("lsp.telescope")
 -- Configuracion de icons, funciona junto a telescope

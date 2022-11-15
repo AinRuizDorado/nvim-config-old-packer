@@ -4,7 +4,7 @@ local nvim_lsp = require('lspconfig')
 local lspkind = require('lspkind')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 nvim_lsp.tsserver.setup {
 
