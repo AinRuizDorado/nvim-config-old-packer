@@ -17,7 +17,8 @@ require('packer').startup(function()
   -- Themes
   use({
     "ryanoasis/vim-devicons",
-    "folke/tokyonight.nvim",
+    -- "folke/tokyonight.nvim",
+    --
     "nvim-lualine/lualine.nvim",
     'norcalli/nvim-colorizer.lua'
   })
@@ -73,10 +74,20 @@ require('packer').startup(function()
   })
 
   -- LSP SAGA
-  use({
+use({
     "glepnir/lspsaga.nvim",
+    opt = true,
     branch = "main",
-  })
+    event = "LspAttach",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    requires = {
+        {"nvim-tree/nvim-web-devicons"},
+        --Please make sure you install markdown and markdown_inline parser
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+})
 
   -- LSP
   use({

@@ -20,7 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
+Plug 'thedenisnikulin/vim-cyberpunk'
 " Treesitter
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -59,3 +59,9 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>w :w<Cr>
 nmap <Leader>q :q<Cr>
 
+
+
+" Cyberpunk Theme
+set termguicolors
+colorscheme cyberpunk
+let g:airline_theme='cyberpunk'
