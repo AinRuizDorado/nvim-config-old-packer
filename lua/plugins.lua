@@ -73,21 +73,6 @@ require('packer').startup(function()
     "onsails/lspkind.nvim",
   })
 
-  -- LSP SAGA
-use({
-    "glepnir/lspsaga.nvim",
-    opt = true,
-    branch = "main",
-    event = "LspAttach",
-    config = function()
-        require("lspsaga").setup({})
-    end,
-    requires = {
-        {"nvim-tree/nvim-web-devicons"},
-        --Please make sure you install markdown and markdown_inline parser
-        {"nvim-treesitter/nvim-treesitter"}
-    }
-})
 
   -- LSP
   use({
@@ -107,7 +92,6 @@ use({
 
   -- Treesitter context
   -- use 'nvim-treesitter/nvim-treesitter-context'
-
   use "lukas-reineke/indent-blankline.nvim"
 
   use {
@@ -115,5 +99,11 @@ use({
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
   }
   use 'kyazdani42/nvim-web-devicons'
+
+
+  -- reemplazo de lsp saga
+  use 'lewis6991/hover.nvim'
+
+
 
 end)

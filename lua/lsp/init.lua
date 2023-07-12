@@ -15,14 +15,14 @@ require("lsp.theme")
 require('lsp.lsp')
 -- Configuracion lsp kind para mostrar icono al lado del lsp y buffer
 require("lsp.lspkind")
--- Configuracion  de LSPSaga
-require("lsp.lspSaga")
 -- Configuracion de Null-ls y eslint
 require("lsp.null-ls-eslint")
 -- Configuracion de GitSigns para que se muestre el registro git a la derecha de la linea
 require("lsp.gitSigns")
 -- Configuracion de BlankLine para saber que bloque de codigo estas
 require("lsp.blankLine")
+-- Configuracion Hover.nvim para reemplazar el hover de lspsaga
+require("lsp.hover")
 -- Configuracion de Prettier con null-ls-eslint
 -- require("lsp.prettier")
 
