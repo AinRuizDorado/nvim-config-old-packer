@@ -59,9 +59,14 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>w :w<Cr>
 nmap <Leader>q :q<Cr>
 
-
+tnoremap   <silent>   <C-r>   <C-\><C-n>:FloatermToggle<CR>
 
 " Cyberpunk Theme
 set termguicolors
 colorscheme cyberpunk
 let g:airline_theme='cyberpunk'
+
+set shell=powershell
+set shellcmdflag=-command
+set shellquote=\"
+set shellxquote=

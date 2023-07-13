@@ -25,16 +25,19 @@ keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files()<cr>",
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Shorten function name
-local keymap = vim.keymap.set
+-- local keymap = vim.keymap.set
+
+-- Tabs configuration
+-- Move to previous/next
+keymap('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+keymap('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+-- Close buffer
+keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 
 
--- Lsp finder find the symbol definition implement reference
--- if there is no implement it will hide
--- when you use action in finder like open vsplit then you can
--- use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Outline
 keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
-
+-- Terminal Keymaps
+keymap("n", "<C-r>", ":FloatermToggle<CR>", opts)

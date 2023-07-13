@@ -4,7 +4,6 @@ local use = require('packer').use
 
 
 require('packer').startup(function()
-
   -- el propio Packer, si se borra es F total
   use 'wbthomason/packer.nvim'
 
@@ -82,13 +81,13 @@ require('packer').startup(function()
     "jose-elias-alvarez/null-ls.nvim",
     "MunifTanjim/eslint.nvim",
   })
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
 
   -- Treesitter context
   -- use 'nvim-treesitter/nvim-treesitter-context'
@@ -98,12 +97,12 @@ require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
   }
+  -- iconos y bar de tabs
   use 'kyazdani42/nvim-web-devicons'
-
-
-  -- reemplazo de lsp saga
+  use 'romgrk/barbar.nvim'
+  -- Hover, reemplazo de lsp saga
   use 'lewis6991/hover.nvim'
 
-
-
+  -- Float Term, remplazo de lsp saga
+  use 'voldikss/vim-floaterm'
 end)

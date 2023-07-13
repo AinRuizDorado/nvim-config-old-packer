@@ -11,8 +11,6 @@ require("lsp.devicons")
 require("lsp.keymaps")
 -- Configuracion visual de neovim
 require("lsp.theme")
--- Configuracion de servidores de lenguaje
-require('lsp.lsp')
 -- Configuracion lsp kind para mostrar icono al lado del lsp y buffer
 require("lsp.lspkind")
 -- Configuracion de Null-ls y eslint
